@@ -66,6 +66,8 @@ class SpacySimilarity(Comparator):
         super().__init__(language)
         try:
             import spacy
+            from spacy.cli.download import download
+            download(model="en_core_web_sm")
         except ImportError:
             message = (
                 'Unable to import "spacy".\n'
@@ -120,6 +122,8 @@ class JaccardSimilarity(Comparator):
         super().__init__(language)
         try:
             import spacy
+            from spacy.cli.download import download
+            download(model="en_core_web_sm")
         except ImportError:
             message = (
                 'Unable to import "spacy".\n'

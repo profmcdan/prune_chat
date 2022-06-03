@@ -18,6 +18,8 @@ class PosLemmaTagger(object):
 
     def __init__(self, language=None):
         import spacy
+        from spacy.cli.download import download
+        download(model="en_core_web_sm")
 
         self.language = language or languages.ENG
 
